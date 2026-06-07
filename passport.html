@@ -42,8 +42,7 @@
         .blue-title  { background-color: #87CEEB; }
         .pink-title  { background-color: #FFB6D9; }
 
-        .left-section  { display: flex; flex-direction: column; }
-        .right-section { display: flex; flex-direction: column; }
+        .left-section, .right-section { display: flex; flex-direction: column; }
 
         .random-question-box {
             background-color: rgba(135, 206, 235, 0.15);
@@ -99,18 +98,9 @@
 
         .input-underline:focus { border-bottom-color: #87CEEB; }
 
-        .input-unit {
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-        }
+        .input-unit { font-size: 14px; font-weight: 600; color: #333; }
 
-        .weight-group {
-            display: flex;
-            align-items: flex-end;
-            gap: 5px;
-        }
-
+        .weight-group { display: flex; align-items: flex-end; gap: 5px; }
         .weight-group .input-underline { flex: 0 1 100px; }
 
         .stamp-container {
@@ -135,7 +125,13 @@
             background-color: #FFB6D9;
             padding: 15px;
             border-radius: 5px;
-            margin-top: 0;
+        }
+
+        .journey-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
         }
 
         .journey-title {
@@ -143,7 +139,16 @@
             font-weight: bold;
             font-style: italic;
             color: black;
-            margin-bottom: 15px;
+        }
+
+        .undo-btn {
+            background: rgba(255,255,255,0.6);
+            border: 1.5px solid rgba(0,0,0,0.2);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #444;
         }
 
         .canvas-container {
@@ -181,6 +186,7 @@
             min-height: 250px;
             text-align: center;
             margin-bottom: 15px;
+            overflow: hidden;
         }
 
         .location-preview-text {
@@ -201,7 +207,7 @@
             border: 2px solid #ddd;
             border-radius: 5px;
             cursor: pointer;
-            background-color: white;
+            background-color: #f0f0f0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -209,34 +215,17 @@
             font-weight: 600;
             color: #666;
             transition: all 0.3s;
+            overflow: hidden;
+            padding: 0;
         }
 
-        .location-item:hover {
-            border-color: #4A90E2;
-            box-shadow: 0 2px 8px rgba(74,144,226,0.2);
-        }
-
-        .location-item.selected {
-            border-color: #4A90E2;
-            background-color: #4A90E2;
-            color: white;
-        }
+        .location-item:hover { border-color: #4A90E2; box-shadow: 0 2px 8px rgba(74,144,226,0.2); }
+        .location-item.selected { border-color: #4A90E2; box-shadow: 0 4px 12px rgba(74,144,226,0.4); }
 
         .check-in-section { margin-top: auto; }
 
-        .check-in-label {
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .room-type-label {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
+        .check-in-label { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 5px; }
+        .room-type-label { font-size: 12px; color: #666; margin-bottom: 10px; }
         .room-selector { display: flex; gap: 15px; align-items: center; }
 
         .checkbox {
@@ -247,9 +236,6 @@
             cursor: pointer;
             background-color: white;
             transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .checkbox.blue   { border-color: #4A90E2; }
@@ -278,18 +264,9 @@
         }
 
         .btn-submit { background-color: #4A90E2; color: white; }
-        .btn-submit:hover {
-            background-color: #2E5C8A;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .btn-reset { background-color: #FFB6D9; color: #333; }
-        .btn-reset:hover {
-            background-color: #FF95B8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
+        .btn-submit:hover { background-color: #2E5C8A; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .btn-reset  { background-color: #FFB6D9; color: #333; }
+        .btn-reset:hover  { background-color: #FF95B8; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
         /* ===== 저장 모달 ===== */
         .save-overlay {
@@ -321,10 +298,7 @@
             to   { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .save-plant {
-            margin: 0 auto 20px;
-            display: block;
-        }
+        .save-plant { margin: 0 auto 20px; display: block; }
 
         .save-headline-row {
             display: flex;
@@ -334,12 +308,7 @@
             margin-bottom: 16px;
         }
 
-        .save-headline {
-            font-size: 15px;
-            font-style: italic;
-            color: #333;
-            line-height: 1.5;
-        }
+        .save-headline { font-size: 15px; font-style: italic; color: #333; line-height: 1.5; }
 
         .save-dl-btn {
             background: none;
@@ -356,27 +325,13 @@
 
         .save-dl-btn:hover { background: rgba(0,0,0,0.08); }
 
-        .save-divider {
-            border: none;
-            border-top: 1px solid rgba(0,0,0,0.12);
-            margin: 16px 0;
-        }
+        .save-divider { border: none; border-top: 1px solid rgba(0,0,0,0.12); margin: 16px 0; }
 
-        .save-insta-id {
-            font-size: 18px;
-            font-weight: bold;
-            color: #C13584;
-            margin-bottom: 6px;
-        }
-
+        .save-insta-id { font-size: 18px; font-weight: bold; color: #C13584; margin-bottom: 6px; }
         .save-insta-id a { color: inherit; text-decoration: none; }
         .save-insta-id a:hover { text-decoration: underline; }
 
-        .save-insta-nudge {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 24px;
-        }
+        .save-insta-nudge { font-size: 13px; color: #666; margin-bottom: 24px; }
 
         .save-close-btn {
             background: none;
@@ -393,11 +348,6 @@
 
         .btn-disabled { opacity: 0.6; pointer-events: none; }
 
-        @media (max-width: 480px) {
-            .save-card { padding: 28px 20px 24px; }
-            .save-headline { font-size: 13px; }
-        }
-
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
             .input-group { flex-direction: column; }
@@ -408,7 +358,6 @@
 <body>
 
 <div class="container" id="passportContainer">
-    <!-- LEFT -->
     <div class="left-section">
         <div class="title-box blue-title">BAGGAGE ENTRY</div>
 
@@ -440,20 +389,22 @@
         </div>
 
         <div class="journey-section">
-            <div class="journey-title">Journey Threads</div>
+            <div class="journey-header">
+                <div class="journey-title">Journey Threads</div>
+                <button class="undo-btn" id="undoBtn">↩ 되돌리기</button>
+            </div>
             <div class="canvas-container">
                 <canvas id="journeyCanvas" width="220" height="200"></canvas>
             </div>
         </div>
     </div>
 
-    <!-- RIGHT -->
     <div class="right-section">
         <div class="title-box pink-title">Visit Location</div>
 
         <div class="visit-location">
             <div class="location-main-box" id="locationMainBox">
-                <div class="location-preview-text">당신의 여행지를 선택해주세요</div>
+                <div class="location-preview-text">당신은 어디로 여행을 왔나요?</div>
             </div>
             <div class="location-grid" id="locationGrid"></div>
         </div>
@@ -469,7 +420,6 @@
         </div>
     </div>
 
-    <!-- BUTTONS -->
     <div class="button-container">
         <button class="btn btn-submit" id="submitBtn">여권 발행하기</button>
         <button class="btn btn-reset"  id="resetBtn">초기화</button>
@@ -479,35 +429,27 @@
 <!-- 저장 모달 -->
 <div class="save-overlay" id="saveOverlay">
     <div class="save-card">
-
-        <!-- 화분 일러스트 SVG -->
         <svg class="save-plant" width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- 화분 몸통 -->
-            <path d="M38 90 Q36 118 42 122 H78 Q84 118 82 90 Z" fill="#C97D4E" stroke="#9B5E35" stroke-width="1.5"/>
-            <!-- 화분 테두리 윗부분 -->
-            <rect x="33" y="85" width="54" height="9" rx="4" fill="#D9905C" stroke="#9B5E35" stroke-width="1.5"/>
-            <!-- 화분 하이라이트 -->
-            <path d="M43 95 Q42 112 45 118" stroke="#E8A87C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-            <!-- 흙 -->
-            <ellipse cx="60" cy="86" rx="24" ry="5" fill="#7A4F2D"/>
-            <!-- 줄기 -->
-            <path d="M60 85 Q60 68 60 55" stroke="#5A8A3C" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- 왼쪽 잎 -->
-            <path d="M60 70 Q44 60 40 50 Q52 52 60 65" fill="#6DB44E" stroke="#4E8C34" stroke-width="1"/>
-            <!-- 오른쪽 잎 -->
-            <path d="M60 65 Q76 55 80 45 Q68 48 60 62" fill="#7DC85C" stroke="#4E8C34" stroke-width="1"/>
-            <!-- 새싹 끝 -->
-            <path d="M60 55 Q57 44 60 36 Q63 44 60 55" fill="#8DD96A" stroke="#4E8C34" stroke-width="1"/>
-            <!-- 새싹 작은 잎 -->
-            <path d="M60 46 Q53 40 51 34 Q58 38 60 46" fill="#A0E87A" stroke="#4E8C34" stroke-width="0.8"/>
-            <path d="M60 46 Q67 40 69 34 Q62 38 60 46" fill="#A0E87A" stroke="#4E8C34" stroke-width="0.8"/>
+            <ellipse cx="65" cy="126" rx="26" ry="4" fill="rgba(0,0,0,0.08)"/>
+            <path d="M40 92 Q37 120 44 125 H86 Q93 120 90 92 Z" fill="#C8784A"/>
+            <rect x="34" y="86" width="62" height="10" rx="5" fill="#D98B5A"/>
+            <path d="M46 97 Q44 113 47 121" stroke="#E8A87C" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+            <ellipse cx="65" cy="88" rx="27" ry="6" fill="#6B4226"/>
+            <ellipse cx="65" cy="87" rx="24" ry="4" fill="#7A4F2D"/>
+            <path d="M65 85 C65 77 63 67 65 55 C67 43 65 35 65 27" stroke="#4A7A30" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M64 69 C52 65 38 57 34 45 C46 45 58 55 64 67" fill="#5C9E3E" stroke="#3D7828" stroke-width="0.8"/>
+            <path d="M66 63 C78 57 92 49 96 37 C84 39 72 49 66 61" fill="#6DB84A" stroke="#3D7828" stroke-width="0.8"/>
+            <path d="M64 51 C54 47 44 41 42 33 C52 33 62 41 64 49" fill="#78C84E" stroke="#3D7828" stroke-width="0.7"/>
+            <path d="M66 47 C74 41 82 35 84 27 C74 29 66 37 65 45" fill="#8DD96A" stroke="#3D7828" stroke-width="0.7"/>
+            <path d="M65 27 C62 19 63 11 65 5 C67 11 68 19 65 27" fill="#A0E87A" stroke="#3D7828" stroke-width="0.8"/>
+            <path d="M65 17 C59 13 55 7 56 1 C62 3 66 11 65 17" fill="#B4F080" stroke="#3D7828" stroke-width="0.6"/>
+            <path d="M65 17 C71 13 75 7 74 1 C68 3 64 11 65 17" fill="#B4F080" stroke="#3D7828" stroke-width="0.6"/>
         </svg>
 
-        <!-- 문구 + 다운로드 아이콘 -->
         <div class="save-headline-row">
             <span class="save-headline">여러분의 여정은 어떤 모습이 될까요?</span>
             <button class="save-dl-btn" id="downloadBtn" title="이미지 저장">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 3v12M8 11l4 4 4-4"/>
                     <path d="M4 18h16"/>
                 </svg>
@@ -515,18 +457,17 @@
         </div>
 
         <hr class="save-divider">
-
         <div class="save-insta-id">
             <a href="https://www.instagram.com/clumsy_checkin" target="_blank">@clumsy_checkin</a>
         </div>
-        <div class="save-insta-nudge">다른 이들의 여정도 보러와주세요!</div>
-
+        <div class="save-insta-nudge">다른 이들의 여정도 보러오세요!</div>
         <button class="save-close-btn" id="closeModalBtn">닫기</button>
     </div>
 </div>
 
 <script>
-    /* ===== DATA ===== */
+    const GITHUB_RAW = "https://raw.githubusercontent.com/lisub303/checkinto/main/";
+
     const questions = [
         "가장 최근에 산 물건",
         "가장 마음에 드는 물건",
@@ -539,18 +480,19 @@
         "평소보다 오늘 특별히 챙긴 물건"
     ];
 
-    const pdfFiles = [
+    const imgFiles = [
         "location_1.png","location_2.png","location_3.png",
-        "location_4.png","location_5.png","loctaion_6.png",
+        "location_4.png","location_5.png","location_6.png",
         "location_7.png","location_8.png","location_9.png"
     ];
 
-    /* ===== STATE ===== */
     let selectedRoom = null;
     let journeyPath  = "";
     let dots = [];
     let selectedLocationFile = null;
     let capturedDataUrl = null;
+    let isDragging = false;
+    let lastSnapped = null;
 
     /* ===== CANVAS ===== */
     const canvas = document.getElementById('journeyCanvas');
@@ -589,39 +531,59 @@
     }
 
     function nearestDot(x, y) {
-        return dots.find(d => Math.hypot(x - d.x, y - d.y) <= d.r + 5) || null;
+        return dots.find(d => Math.hypot(x - d.x, y - d.y) <= d.r + 8) || null;
     }
 
-    function handleTap(x, y) {
+    function getPos(e) {
+        const r = canvas.getBoundingClientRect();
+        if (e.touches) return { x: e.touches[0].clientX - r.left, y: e.touches[0].clientY - r.top };
+        return { x: e.clientX - r.left, y: e.clientY - r.top };
+    }
+
+    function dragStart(e) {
+        e.preventDefault();
+        const {x, y} = getPos(e);
         const dot = nearestDot(x, y);
         if (!dot) return;
-        if (!journeyPath) {
-            journeyPath = String(dot.id);
-        } else {
+        isDragging = true;
+        lastSnapped = dot;
+        if (!journeyPath) { journeyPath = String(dot.id); }
+        else {
             const ids = journeyPath.split('-').map(Number);
-            const idx = ids.indexOf(dot.id);
-            if (idx === -1) {
-                // 새 점 추가
-                journeyPath += '-' + dot.id;
-            } else if (idx === ids.length - 1 && ids.length > 1) {
-                // 마지막 점 다시 누르면 취소
-                journeyPath = ids.slice(0, -1).join('-');
-            }
-            // 첫 점만 있을 때 다시 누르면 전체 초기화
-            if (ids.length === 1 && idx === 0) {
-                journeyPath = '';
-            }
+            if (!ids.includes(dot.id)) journeyPath += '-' + dot.id;
         }
         redraw();
     }
 
-    canvas.addEventListener('mousedown', e => {
-        const r = canvas.getBoundingClientRect();
-        handleTap(e.clientX - r.left, e.clientY - r.top);
-    });
-    canvas.addEventListener('touchstart', e => {
-        const t = e.touches[0], r = canvas.getBoundingClientRect();
-        handleTap(t.clientX - r.left, t.clientY - r.top);
+    function dragMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const {x, y} = getPos(e);
+        const dot = nearestDot(x, y);
+        if (!dot || dot === lastSnapped) return;
+        const ids = journeyPath.split('-').map(Number);
+        if (!ids.includes(dot.id)) {
+            journeyPath += '-' + dot.id;
+            lastSnapped = dot;
+            redraw();
+        }
+    }
+
+    function dragEnd() { isDragging = false; lastSnapped = null; }
+
+    canvas.addEventListener('mousedown',  dragStart);
+    canvas.addEventListener('mousemove',  dragMove);
+    canvas.addEventListener('mouseup',    dragEnd);
+    canvas.addEventListener('mouseleave', dragEnd);
+    canvas.addEventListener('touchstart', dragStart, { passive: false });
+    canvas.addEventListener('touchmove',  dragMove,  { passive: false });
+    canvas.addEventListener('touchend',   dragEnd);
+
+    document.getElementById('undoBtn').addEventListener('click', () => {
+        if (!journeyPath) return;
+        const ids = journeyPath.split('-');
+        journeyPath = ids.length <= 1 ? '' : ids.slice(0, -1).join('-');
+        redraw();
     });
 
     /* ===== QUESTION ===== */
@@ -637,30 +599,28 @@
     });
 
     /* ===== LOCATION GRID ===== */
-    const GITHUB_RAW = "https://raw.githubusercontent.com/lisub303/checkinto/main/";
-
     function setupGrid() {
         const grid = document.getElementById('locationGrid');
         grid.innerHTML = '';
-        pdfFiles.forEach((file, i) => {
+        imgFiles.forEach((file, i) => {
             const el = document.createElement('div');
             el.className = 'location-item';
-            el.style.cssText = 'padding:0; overflow:hidden; background:#f0f0f0;';
-
             const img = document.createElement('img');
             img.src = GITHUB_RAW + file;
             img.crossOrigin = 'anonymous';
-            img.style.cssText = 'width:100%; height:100%; object-fit:cover; display:block;';
+            img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
             img.onerror = () => { el.textContent = i + 1; };
             el.appendChild(img);
-
             el.addEventListener('click', () => {
                 document.querySelectorAll('.location-item').forEach(x => x.classList.remove('selected'));
                 el.classList.add('selected');
                 selectedLocationFile = file;
-                const bigUrl = GITHUB_RAW + file;
-                document.getElementById('locationMainBox').innerHTML =
-                    `<img src="${bigUrl}" crossorigin="anonymous" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;" alt="${file}">`;
+                const bigImg = document.createElement('img');
+                bigImg.src = GITHUB_RAW + file;
+                bigImg.crossOrigin = 'anonymous';
+                bigImg.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;';
+                document.getElementById('locationMainBox').innerHTML = '';
+                document.getElementById('locationMainBox').appendChild(bigImg);
             });
             grid.appendChild(el);
         });
@@ -687,7 +647,7 @@
         if (!selectedLocationFile) { alert('Location을 선택해주세요.'); return; }
 
         const btn = document.getElementById('submitBtn');
-        btn.textContent = '캡처 중...';
+        btn.textContent = '여행을 기록하는 중...';
         btn.classList.add('btn-disabled');
 
         try {
@@ -727,7 +687,7 @@
         capturedDataUrl = null;
         document.querySelectorAll('.checkbox').forEach(x => x.classList.remove('selected'));
         document.querySelectorAll('.location-item').forEach(x => x.classList.remove('selected'));
-        document.getElementById('locationMainBox').innerHTML = '<div class="location-preview-text">PDF를 선택하세요</div>';
+        document.getElementById('locationMainBox').innerHTML = '<div class="location-preview-text">이미지를 선택하세요</div>';
         document.getElementById('stamp').classList.remove('show');
         redraw();
         randomQuestion();
